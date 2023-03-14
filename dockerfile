@@ -14,4 +14,6 @@ RUN npm install
 COPY . .
 
 # Starting our application
-CMD npm start
+EXPOSE 3000 
+
+CMD ["npm ","start"]
