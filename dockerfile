@@ -1,19 +1,20 @@
-FROM node:alpine AS development
+# base image
+FROM node:14.17.6-alpine
 
-# Declaring env
-ENV NODE_ENV development
+# set working directory
+WORKDIR /app
 
-# Setting up the work directory
-WORKDIR /react-app
+# copy package.json and package-lock.json
+COPY package*.json ./
 
-# Installing dependencies
-COPY ./package.json /react-app
+# install dependencies
 RUN npm install
 
-# Copying all the files in our project
+# copy the rest of the app code
 COPY . .
 
-# Starting our application
-EXPOSE 3000 
+# build the app
+RUN npm run build
 
-CMD ["npm ","start"]
+# start the app
+CMD [ "npm", "start" ]
