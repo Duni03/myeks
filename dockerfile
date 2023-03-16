@@ -13,6 +13,8 @@ RUN npm install
 # copy the rest of the app code
 COPY . .
 
+EXPOSE 3000
+
 # build the app
 RUN npm run build
 
