@@ -1,5 +1,9 @@
 # Getting Started with Create React App
 
+docker build -t myeks:latest .
+
+docker run -p 3000:3000 myeks
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
